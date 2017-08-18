@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <title>首页</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+  <script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/jquery1.9.js"></script>
+  <script type="text/javascript" src="js/refresh.js"></script>
+  <script type="text/javascript" src="js/workPlanList.js"></script>
+  <script type="text/javascript" src="js/common.js"></script>
+  <style type="text/css">
+      /*全局样式*/
+      html, body, table, tr, td, span, ul, li {
+        margin: 0 auto;
+        padding: 0;
+        font-family: "微软雅黑";
+      }
+      body {
+        background: #efeff5 url(image/backg.jpg) fixed;
+      }
+
+      ul, li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #fff;
+      }
+      #refreshDiv {width: 90%;margin: 0 auto;    box-shadow: 0px 3px 3px #D1D1D1;   
+       border: 1px solid #f3f3f3;
+    background: rgba(255, 255, 255, 0.27);border-radius: 7px;margin-bottom: 10px;margin-top: 15px}
+      .kuanjia {height: 50px;
+    border: none;
+    background: none;
+    box-shadow: none;}
+    .title-tongzhi {width: 100%;font-size: 1.3em;text-align: center;margin-top: 13px;}
+    .kuanjia p {font-size: 1.2em}
+  </style>
+  </head>
+  <body class="liststyle" ng-app="workPlan">
+    <div id="scrollTitle" style="height:226px;">
+      <div style="margin:auto;text-align:center"><div style="height: 169px;"></div><div class="refresh-title"><img id="jiantou" src="images/arr.png" /><span id="xialawenzi">下拉刷新</span></div></div>
+</div>
+<div id="refreshDiv">
+<div class="title-tongzhi">通知公告</div>
+<div id="no-data"></div>
+
+  <div ng-controller="WorkPlanController as workPlan" >
+  <div class="kuanjia" ng-repeat="map in workPlan.list" ng-click="workPlan.gotodetail(map.id);">
+  <div class="xiangmu">
+  <p class="oneline"><span>{{map.date*1000 | date:'MM-dd'}}</span>{{map.title}}</p>
+  <div class="clear"></div>
+  </div>
+  </div>
+
+<!--     <div class="kuanjia">
+  <div class="xiangmu">
+  <p class="oneline"><span>任务名称:</span>map.name</p>
+  <div class="clear"></div>
+  </div>
+  </div>
+
+    <div class="kuanjia">
+  <div class="xiangmu">
+  <p class="oneline"><span>任务名称:</span>map.name</p>
+  <div class="clear"></div>
+  </div>
+  </div>
+
+
+    <div class="kuanjia">
+  <div class="xiangmu">
+  <p class="oneline"><span>任务名称:</span>map.name</p>
+  <div class="clear"></div>
+  </div>
+  </div>
+
+
+    <div class="kuanjia">
+  <div class="xiangmu">
+  <p class="oneline"><span>任务名称:</span>map.name</p>
+  <div class="clear"></div>
+  </div>
+  </div>
+
+
+    <div class="kuanjia">
+  <div class="xiangmu">
+  <p class="oneline"><span>任务名称:</span>map.name</p>
+  <div class="clear"></div>
+  </div>
+  </div>
+
+
+    <div class="kuanjia">
+  <div class="xiangmu">
+  <p class="oneline"><span>任务名称:</span>map.name</p>
+  <div class="clear"></div>
+  </div>
+  </div>
+
+
+    <div class="kuanjia">
+  <div class="xiangmu">
+  <p class="oneline"><span>任务名称:</span>map.name</p>
+  <div class="clear"></div>
+  </div>
+  </div>
+
+
+    <div class="kuanjia">
+  <div class="xiangmu">
+  <p class="oneline"><span>任务名称:</span>map.name</p>
+  <div class="clear"></div>
+  </div>
+  </div> -->
+  </div>
+  </div>
+  </body>
+</html>

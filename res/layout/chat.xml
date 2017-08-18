@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root" >    
+  <LinearLayout
+        android:id="@+id/comment_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/fasongbg"
+        android:visibility="visible">
+
+        <EditText
+            style="?android:attr/textViewStyle"
+            android:id="@+id/edit"
+            android:hint="请输入回复"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dip"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLength="2000"
+            android:background="@null"
+            android:paddingLeft="3dp"
+            android:textSize="16sp"
+            android:visibility="visible" />
+
+        <Button
+
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:gravity="center"
+            android:background="@drawable/fasongbtn"
+            android:text="发送" />
+
+    </LinearLayout>
+    
+
+      
+	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp" 
+        android:background="@color/title_bg"
+        android:id="@+id/top">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceLarge" android:layout_centerInParent="true" android:gravity="center" android:textColor="@color/white"/>
+
+            <ImageButton
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_centerInParent="true"
+            android:background="@null" android:src="@drawable/back"/>
+
+    </RelativeLayout>
+    
+	    <ListView 
+        android:id="@+id/duihua"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/comment_view"
+        android:layout_below="@id/top"
+        android:fadingEdge="none"
+        android:divider="@null"
+        android:background="@color/white"
+        android:listSelector="@android:color/transparent" 
+        ></ListView>
+      
+</RelativeLayout>

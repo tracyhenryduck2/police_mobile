@@ -1,0 +1,37 @@
+.list-div{
+border:0px ;
+margin-top:5px;
+background-color:#EEE9E9;
+}
+.list-div .content{padding:10px 20px;}
+.list-div .top{background-color:#FFFFFF;}
+.btn-detial{float:right;}
+
+.bg{
+    background-image:-webkit-gradient(linear,50% 0,0 100%,
+                                        from(transparent),
+                                        color-stop(.5,transparent),
+                                        color-stop(.5,#777777),
+                                        to(#777777)    
+                    ),
+                    -webkit-gradient(linear,50% 0,100% 100%,
+                                        from(transparent),
+                                        color-stop(.5,transparent),
+                                        color-stop(.5,#777777),
+                                        to(#777777)                                            
+                    );
+    background-image:-moz-linear-gradient(50% 0 -45deg,
+                                transparent,
+                                transparent 50%,
+                                #777777 50%,
+                                #777777                                            
+                    ),-moz-linear-gradient(50% 0 -135deg,
+                                transparent,
+                                transparent 50%,
+                                #777777 50%,
+                                #777777                                            
+                    );                                
+    background-size:14px 7px;
+    background-repeat:repeat-x;
+    background-position:0 100%;                    
+}

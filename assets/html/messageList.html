@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>消息列表</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<style type="text/css">
+	</style>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+  <script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/jquery1.9.js"></script>
+  <script type="text/javascript" src="js/refresh.js"></script>
+  <script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/checkHistoryList.js"></script>
+  <script type="text/javascript" src="js/AndroidCheck.js"></script>
+      	 <style>
+      /*全局样式*/
+      html, body, table, tr, td, span, ul, li {
+        margin: 0 auto;
+        padding: 0;
+        font-family: "微软雅黑";
+      }
+      body {
+        background: #efeff5
+      }
+
+      ul, li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #fff;
+      }
+
+ .biaozhi {width: 10%;float:left;}
+ .xiang {width: 90%;}
+ .xiangmu .user {width: 20px}
+ .xiangmu .message {width: 20px}
+ .kuanjia p.right {width: 30%;float: right;text-align: right;}
+ .one {width: 100%;height: auto;}
+ .two {width: 100%;height: auto;}
+ .two p {  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 95%;
+  border-bottom: 1px solid rgb(253, 232, 232);}
+      </style>
+  </head>
+  <body class="liststyle" ng-app="apply">
+    <div id="scrollTitle" style="height:226px;">
+      <div style="margin:auto;text-align:center"><div style="height: 169px;"></div><div class="refresh-title"><img id="jiantou" src="images/arr.png"/><span id="xialawenzi">下拉刷新</span></div></div>
+</div>
+<div id="refreshDiv">
+ 
+  <div ng-controller="ApplyController as apply" >
+  <div ng-repeat="map in apply.list" class="kuanjia" ng-click="apply.gotoChat(map.id,map.name,map.content,map.submit_time,map.phone);">
+  <div class="biaozhi"><div style="width: 29px;" ng-show="map.is_read!=1"><img src="images/unread.png"></div><div style="width: 29px;" ng-show="map.is_read==1"><img src="images/isread.png"></div></div>
+  <div class="xiangmu">
+  <div class="one"><p><img class="message" src="images/use.png"><span>{{map.name}}</span>{{map.phone}}</p><p class="right">{{map.submit_time*1000 | date:'MM-dd HH:mm'}}</p><div class="clear"></div></div>
+  <div class="two"><p>{{map.content}}</p><div class="clear"></div></div>
+  <div class="one"><p><img class="message" src="images/message.png">{{map.content2}}</p><p class="right" ng-show="map.reply_time!=''">{{map.reply_time*1000 | date:'MM-dd HH:mm'}}</p><div class="clear"></div></div>
+   <div class="clear"></div>
+  </div>
+
+  </div>
+  </div>
+ </div>
+  </body>
+</html>

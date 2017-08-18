@@ -1,0 +1,52 @@
+﻿/* CSS Document */
+
+/*全局样式*/
+html,body,table,tr,td,span,ul,li{ margin:0 auto; padding:0;font-family:"微软雅黑"; }
+
+body{ color:#7e7e7e; margin:5px }
+#wrap{ width:100%; margin:0 auto; overflow:hidden; padding:2px 0;}
+ul,li{ list-style:none; padding:0; margin:0;}
+
+a{ color:#fff; text-decoration:none;}
+
+a:hover{ color:#fff;}
+.clearboth{ clear:both; width:100%; margin:0; height:0px; font-size:0px; line-height:0px;}
+.space20{ clear:both; width:100%; margin:0; height:15px; font-size:0px; line-height:0px;}
+
+
+/*通用样式*/
+.content_box{ width:99%;margin:0 auto; border:1px solid #e1e1e1; border-radius:8px; overflow:hidden;}
+
+
+.title {
+	float: left;
+	width: 92%;
+	margin: 0 auto;
+	padding: 3% 4%;
+	border-top: 1px solid #e1e1e1;
+	color: #666; background:#FFF
+}
+
+.title2 {
+	float: left;
+	width: 92%;
+	margin: 0 auto;
+	padding: 3% 4%;
+	
+	color: #666; background:#FFF;
+}
+.title_name {
+	float: left;
+	width: 70%;
+	font-size: 1.3em;
+	font-family: 微软雅黑;
+	line-height:1.5em;
+	vertical-align:bottom; 
+}
+.title1{ float:left; width:20%}
+.title_more {
+	float: left;
+	width: 10%;
+	text-align: right;
+	padding-top: 0.8%;
+}

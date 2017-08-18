@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>设置</title>
+</head>
+<style>
+body{ margin:0 auto; background:#eeeeee}
+
+.title {
+	float: left;
+	width: 92%;
+	margin: 0px auto;
+	padding: 3% 4%;
+	border-bottom: 1px solid #d4d4d4;
+	color: #666; background:#FFF
+}
+.title2 {
+	float: left;
+	width: 92%;
+	margin: 0 auto;
+	padding: 3% 4%;
+	border-bottom: 1px solid #d4d4d4;
+	border-top: 1px solid #d4d4d4;
+	color: #666; background:#FFF; margin-top:5%
+}
+.title_name {
+float: left;
+    width: 50%;
+    font-size: 1.2em;
+    font-family: 微软雅黑;
+    line-height: 34px;
+    margin-left: 13px;
+}
+.title_more {
+	float: left;
+	width: 10%;
+	text-align: right;
+	padding-top: 2%;
+}
+.title.tongzhi {padding: 2% 4%;margin-bottom: 1px}
+.title_name.tongzhi {line-height: 32px}
+.an{ width:100%; height:52px;}
+.newss2{background:#fff; border:2px solid #2c95cf; border-radius:4px;-moz-border-radius:4px; background:#2c95cf; width:90%; height:34px; line-height:34px; text-align:center; margin: 0 auto;   }
+a:hover,.menu a.on{  color:#fff;}
+ a{ font-size:0.9em; font-family:"微软雅黑"; color:#fff; text-decoration:none; display:block;}
+img {-webkit-tap-highlight-color:rgba(255,0,0,0);}
+.title2 .left{ width: 50%;float: left;text-align: center;padding-top: 3%}
+.title2 .right{ width: 50%;float: left }
+</style>
+
+    <script type="text/javascript" src="js/AndroidCheck.js"></script>
+  <script language="javascript"></script>
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript">
+var status  ;
+var timer1 = null;
+
+function initial(){
+
+var user=getUser();
+$("#position").html(user.depname+'-'+user.position);
+$("#myname").html(user.name);
+$("#phone").html(user.phone);
+
+};
+
+function updateCode() {
+  // body...
+  client.open("updateCode.html",1);
+}
+
+function logout(argument) {
+  // body...
+  showAlert("确定","确定要退出吗?","goout();");
+}
+
+function goout() {
+  // body...
+  client.logout();
+}
+</script>
+<body onload="initial()">
+<div class="title2">
+ <div class="left">
+ <img src="image/profle.png" style="width:50%">
+ </div>
+ <div class="right">
+  <p class="position" id="position"></p>
+  <p id="myname"></p>
+  <p id="phone"></p>
+ </div>
+</div>
+
+<div class="title2" onclick="updateCode();"><img  style="float:left;width:7%;margin-top: 6px;" src="image/unlocked.png"> <span class="title_name ">修改密码</span> <span class="title_more"></span> </div>
+
+
+<div style=" width:100%; float:left; padding-top:20px;"><div class="newss2"><a onclick="logout()">退&nbsp;出&nbsp;登&nbsp;录</a></div></div>
+</body>
+</html>

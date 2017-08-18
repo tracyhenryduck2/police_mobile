@@ -1,0 +1,8 @@
+.ng-invalid.ng-dirty {
+border-color: #FA787E;
+}
+.ng-valid.ng-dirty {
+border-color: #78FA89;
+}
+.container-div div{padding:10px 20px;}
+.edit-submit{margin-left:240px;}

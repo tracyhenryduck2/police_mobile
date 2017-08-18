@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>通知公告详情</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<style>
+body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif "宋体";
+  background:#f2f2f0;
+}
+  table{border:1px solid;}
+  td{border:1px solid;padding:2px 10px;font-size:14px;}
+a img {
+  border: 0;
+}
+
+	</style>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/jquery1.9.js"></script>
+<script type="text/javascript" src="js/notice_message.js"></script>
+    <script type="text/javascript" src="js/AndroidCheck.js"></script>
+  <script language="javascript">
+if (browser.versions.iPhone || browser.versions.iPad || browser.versions.ios) {
+  A_I_flag=true;//判断是否为安卓 兼容安卓和苹果的CSS文字对齐
+}
+
+
+if(A_I_flag==true)
+{
+    var now=new Date();
+        var number = now.getYear().toString()+now.getMonth().toString()+now.getDate().toString()+now.getHours().toString()+now.getMinutes().toString()+now.getSeconds().toString();
+        document.write("\<script language=\"javascript\" type=\"text/javascript\" src=\"js/common.js?"+number+"\"><\/script\>");
+}
+else
+{
+
+        document.write("\<script language=\"javascript\" type=\"text/javascript\" src=\"js/common.js\"><\/script\>");
+}
+   
+  </script>
+<script language="javascript"> 
+//扩展Date的format方法 
+Date.prototype.format = function (format) { 
+var o = { 
+"M+": this.getMonth() + 1, 
+"d+": this.getDate(), 
+"h+": this.getHours(), 
+"m+": this.getMinutes(), 
+"s+": this.getSeconds(), 
+"q+": Math.floor((this.getMonth() + 3) / 3), 
+"S": this.getMilliseconds() 
+} 
+if (/(y+)/.test(format)) { 
+format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length)); 
+} 
+for (var k in o) { 
+if (new RegExp("(" + k + ")").test(format)) { 
+format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length)); 
+} 
+} 
+return format; 
+} 
+function getSmpFormatDateByLong(l, isFull) { 
+return getSmpFormatDate(new Date(l), isFull); 
+}
+function getSmpFormatDate(date, isFull) { 
+var pattern = ""; 
+if (isFull == true || isFull == undefined) { 
+pattern = "yyyy-MM-dd hh:mm:ss"; 
+} else { 
+pattern = "yyyy-MM-dd"; 
+} 
+return getFormatDate(date, pattern); 
+} 
+function getFormatDate(date, pattern) { 
+if (date == undefined) { 
+date = new Date(); 
+} 
+if (pattern == undefined) { 
+pattern = "yyyy-MM-dd hh:mm:ss"; 
+} 
+return date.format(pattern); 
+}
+</script>
+<script type="text/javascript">
+var url=getPath();
+var user = getUser();
+//var url="oa.zhetian.net";
+var file = "";
+window.onload=function(){
+creatMask();
+
+//alert(Request.QueryString("id"));
+$.ajax({
+type:"post",
+url:"http://"+url+"/app/Indexapp!noticeDetail.action",
+data:"noticeid="+GetQueryString("id"),
+success:function(data){
+var response=eval("("+data+")");
+console.log(data);
+var date=getSmpFormatDateByLong(response.date*1000,false);
+var testr = response.content;
+//testr=testr.replace(/\r\n/g,"<br/>");
+
+$("#title").html(response.title);
+$("#time").html(date);
+$("#content").html(testr);
+if(response.file_url==null || response.file_url=="")
+$("#fujian").css("display","none");
+else
+$("#fujian").css("display","block");
+$("#file").html(response.file_url.substring(13));
+file=response.file_url;
+removeMask();
+}
+});
+}
+
+function downfile(){
+  download(file,file.substring(13));
+}
+</script>
+
+</head>
+<body>
+<div class="title_content">
+	<span class="title_name" id="title" style="width:100%;text-align:center;font-size: 1.01em;"></span>
+</div>
+<div class="clear"></div>	
+<div id="time" style="color: #666666;padding: 4% 4% 0% 4%;text-align: center;"></div>
+<div class="clear"></div>
+<div id="content" style="color: #666666;padding: 4% 4%;font-size:0.9em"></div>
+  <div class="title_content" id="fujian" style="display:none">
+   <span class="title_name">相关附件:</span><font class="title_more"><a onclick="downfile()" id="file"></a></font>
+  </div>
+</body>
+</html>

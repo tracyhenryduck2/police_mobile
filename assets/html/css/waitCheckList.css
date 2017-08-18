@@ -1,0 +1,8 @@
+.list-div{
+border:0px ;
+margin-top:5px;
+background-color:#EEE9E9;
+}
+.list-div .content{padding:10px 20px;}
+.list-div .top{background-color:#FFFFFF;}
+.btn-detial{float:right;}

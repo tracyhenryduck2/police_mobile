@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/no_net"
+        android:visibility="visible"
+        android:background="@color/white" 
+      >  
+          <ImageView
+            android:id="@+id/dsad"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/nonet" android:visibility="visible"/>
+          <TextView 
+            android:id="@+id/ds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="网络请求失败"
+            android:textSize="23dp"
+            android:textColor="#848689"             />
+          <TextView 
+            android:id="@+id/ds2"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="请检查您的网络重新加载吧"
+            android:textSize="18dp"
+            android:textColor="#c0c0c0"             /> 
+			<Button  
+			    android:layout_width="120dip"  
+			    android:layout_height="40dip"
+			    android:layout_gravity="center_horizontal"  
+			    android:text="点击刷新" 
+			    android:background="@drawable/bg_no_net_button"
+			    android:id="@+id/shuaxin" />         
+              
+  </LinearLayout> 

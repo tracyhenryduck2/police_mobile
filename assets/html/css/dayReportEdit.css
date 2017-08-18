@@ -1,0 +1,15 @@
+.ng-invalid.ng-dirty {
+border-color: #FA787E;
+}
+.ng-valid.ng-dirty {
+border-color: #78FA89;
+}
+.schedule-select{width:100px;}
+.list-div{
+border:0px ;
+margin-top:5px;
+background-color:#EEE9E9;
+}
+.list-div .content{padding:10px 20px;}
+.list-div .top{background-color:#FFFFFF;}
+.btn-detial{float:right;}
