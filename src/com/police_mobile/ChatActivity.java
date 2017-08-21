@@ -158,7 +158,7 @@ public class ChatActivity extends Activity implements OnClickListener{
 				break;
 			case 2:
 				dismissLoadingDialog();
-				Toast.makeText(ChatActivity.this, "网络连接错误", Toast.LENGTH_SHORT).show();
+				Toast.makeText(ChatActivity.this, "回复信息过长..", Toast.LENGTH_SHORT).show();
 				break;
 			case 3:
 				dismissLoadingDialog();
@@ -168,6 +168,7 @@ public class ChatActivity extends Activity implements OnClickListener{
 				dismissLoadingDialog();
 				showSuccess();
 				updateReply(Long.parseLong(msg.obj+""),edit_reply.getText().toString());
+				edit_reply.setText("");
 				break;
 			}
 		}
@@ -207,6 +208,7 @@ public class ChatActivity extends Activity implements OnClickListener{
 		b.setTime(time);
 		list2.add(b);
 		adapter.setData(list2);
+		listview.setSelection(adapter.getCount()-1);
 	}
 
 	@Override

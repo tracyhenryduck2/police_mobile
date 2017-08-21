@@ -20,8 +20,8 @@ import android.util.Log;
 
 public class BaseService {
     //public final static String ROOTPath = "111.1.3.197:88";
-	//public final static String ROOTPath = "police.ztoas.com:88";
-	public final static String ROOTPath = "192.168.1.103:8080";
+	public final static String ROOTPath = "oa.zhetian.net";
+	//public final static String ROOTPath = "192.168.1.101:8080";
 	public final static String ServerPath = ROOTPath+"/police";
 //	public final static String ServerPath = "192.168.1.110:8080/police";
 //	public final static String ServerPath = "192.168.1.28";
