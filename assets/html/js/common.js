@@ -86,10 +86,10 @@ return;
 
 function removeMask()
 {
-  window.parent.document.body.removeChild(window.parent.document.getElementById("maskDiv"));
+ 
   // flag_of_cre=true;
   try{
-
+ window.parent.document.body.removeChild(window.parent.document.getElementById("maskDiv"));
   }catch (e) {  
                 //alert("不支持TouchEvent事件！" + e.message);  
              } 

@@ -8,7 +8,7 @@ var first=false;
 
 function LoadData(){
 //creatMask();
- if(!first) creatMask(); 
+ //if(!first) creatMask(); 
 result = false;
     request.post('http://'+url+'/app/Indexapp!noticeList.action').success(function(data){
         if(data!=null&&data.length==0)
